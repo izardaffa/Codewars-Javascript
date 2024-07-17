@@ -11,4 +11,5 @@ form.addEventListener('submit', (e) => {
     const number = form.number.value
 
     result.innerText = createPhoneNumber(number)
+    form.reset()
 })

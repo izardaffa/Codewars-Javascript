@@ -21,6 +21,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     result.innerHTML = narcissistic(parseInt(form.number.value))
+    form.reset()
 })
 
 number.innerHTML = form.number.value
