@@ -1,3 +1,16 @@
+const form = document.querySelector('form')
+const number = document.querySelector('#number')
+const result = document.querySelector('#result')
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    result.innerText = narcissistic(parseInt(form.number.value))
+    form.reset()
+})
+
+number.innerText = form.number.value
+
 function narcissistic(value) {
     const numberString = value.toString()
     let calculatedNumber = 0
@@ -12,16 +25,3 @@ function narcissistic(value) {
 
     return value === calculatedNumber
 }
-
-const form = document.querySelector('form')
-const number = document.querySelector('#number')
-const result = document.querySelector('#result')
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    result.innerHTML = narcissistic(parseInt(form.number.value))
-    form.reset()
-})
-
-number.innerHTML = form.number.value

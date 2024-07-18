@@ -1,3 +1,21 @@
+const form = document.querySelector('form')
+const result = document.querySelector('#result')
+
+form.addEventListener('submit', (e) => {
+    try {
+        e.preventDefault()
+
+        result.innerText = tribonacci(
+            form.signature.value.split(',').map(x => parseInt(x)),
+            form.number.value
+        ).join(', ')
+
+        form.reset()
+    } catch (error) {
+        result.innerText = 'Inputan tidak sesuai!'
+    }
+})
+
 function tribonacci(signature, n) {
     let tribonacci = signature.map(x => x)
     let result = []
@@ -5,8 +23,7 @@ function tribonacci(signature, n) {
     if (signature.length >= 3) {
         while (tribonacci.length < n) {
             let arrLength = tribonacci.length
-            const nextNumber = tribonacci[arrLength - 3] + tribonacci[arrLength - 2] + tribonacci[arrLength - 1]
-            tribonacci.push(nextNumber)
+            tribonacci.push(tribonacci[arrLength - 3] + tribonacci[arrLength - 2] + tribonacci[arrLength - 1])
         }
         
         for (let i = 0; i < n; i++) {
@@ -18,20 +35,3 @@ function tribonacci(signature, n) {
         console.error('This is not Tribonacci Sequence.')
     }
 }
-
-const form = document.querySelector('form')
-const result = document.querySelector('#result')
-
-form.addEventListener('submit', (e) => {
-    try {
-        e.preventDefault()
-
-        const signature = form.signature.value.split(',').map(x => parseInt(x))
-        const number = form.number.value
-
-        result.innerText = tribonacci(signature, number).join(', ')
-        form.reset()
-    } catch (error) {
-        result.innerText = 'Inputan tidak sesuai!'
-    }
-})
