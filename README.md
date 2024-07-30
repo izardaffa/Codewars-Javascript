@@ -5,3 +5,4 @@
 - Day 3: [Tribonacci Sequence](https://www.codewars.com/kata/556deca17c58da83c00002db/train/javascript)
 - Day 4: [Word Order](https://www.codewars.com/kata/55c45be3b2079eccff00010f/train/javascript)
 - Day 5: [Printer Errors](https://www.codewars.com/kata/56541980fa08ab47a0000040/train/javascript)
+- Day 6: [Who likes it?](https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript)

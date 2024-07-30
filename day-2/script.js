@@ -13,15 +13,11 @@ number.innerText = form.number.value
 
 function narcissistic(value) {
     const numberString = value.toString()
-    let calculatedNumber = 0
+    let total = 0
 
     for (let i = 0; i < numberString.length; i++) {
-        calculatedNumber += (parseInt(numberString[i]) ** numberString.length)
+        total += (parseInt(numberString[i]) ** numberString.length)
     }
 
-    console.log(value)
-    console.log(calculatedNumber)
-    console.log(value === calculatedNumber)
-
-    return value === calculatedNumber
+    return value === total
 }
